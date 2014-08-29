@@ -3,6 +3,12 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'associations' do
     it { should have_many(:posts).dependent(:destroy) }
+    it { should have_many(:friendships).dependent(:destroy) }
+    it { should have_many(:friends).conditions("status = 'accepted'").through(:friendships) }
+    it { should have_many(:requested_friends).conditions("status = 'requested'").
+                                              through(:friendships).source(:friend) }
+    it { should have_many(:pending_friends).conditions("status = 'pending'").
+                                            through(:friendships).source(:friend) }
   end
 
   describe 'validations' do
