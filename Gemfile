@@ -8,11 +8,16 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
 
+# Authentication
 gem 'devise'
-gem 'simple_form'
+
+# Form builder
+gem 'simple_form', '~> 3.1.0.rc2' # tag for Bootstrap 3 support
+
+# Bootstrap
+gem 'autoprefixer-rails'
+gem 'bootstrap-sass', '~> 3.2.0'
 
 group :development, :test do
   gem 'rspec-rails'
