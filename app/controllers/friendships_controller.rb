@@ -17,6 +17,14 @@ class FriendshipsController < ApplicationController
     end
   end
 
+  def destroy
+    if current_user.cancel_friendship!(@friend)
+      redirect_to @friend, notice: 'Friend request cancelled.'
+    else
+      redirect_to @friend, notice: 'Friendship not found.'
+    end
+  end
+
   private
 
   def set_friend

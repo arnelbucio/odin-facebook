@@ -16,7 +16,7 @@ module FriendshipsHelper
   end
 
   def cancel_friend_request_button(friend)
-    button_to 'Cancel friend request', friendships_path(friend_id: friend.id),
+    button_to 'Cancel friend request', friendship_path(friend_id: friend.id),
                                        method: :delete, data: { confirm: 'Are you sure?' }
   end
 

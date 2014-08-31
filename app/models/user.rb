@@ -34,4 +34,13 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def cancel_friendship!(friend)
+    if self.requested_friends.include?(friend)
+      transaction do
+        self.friendships.find_by(friend: friend).destroy
+        friend.friendships.find_by(friend: self).destroy
+      end
+    end
+  end
 end
