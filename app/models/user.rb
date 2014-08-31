@@ -18,9 +18,20 @@ class User < ActiveRecord::Base
 
 
   def send_friend_request!(friend)
-    transaction do
-      self.friendships.create! friend: friend, status: 'requested'
-      friend.friendships.create! friend: self, status: 'pending'
+    unless self.friends.include?(friend)
+      transaction do
+        self.friendships.create! friend: friend, status: 'requested'
+        friend.friendships.create! friend: self, status: 'pending'
+      end
+    end
+  end
+
+  def accept_friend_request!(friend)
+    if self.pending_friends.include?(friend)
+      transaction do
+        self.friendships.find_by(friend: friend).update_attribute(:status, 'accepted')
+        friend.friendships.find_by(friend: self).update_attribute(:status, 'accepted')
+      end
     end
   end
 end

@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :users
-  resources :friendships
+  resources :friendships do
+    patch :accept, on: :member
+  end
 end
