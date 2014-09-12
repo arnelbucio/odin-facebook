@@ -2,7 +2,8 @@ class FriendshipsController < ApplicationController
   before_action :set_friend
 
   def create
-    if current_user.send_friend_request!(@friend)
+    if friendship = current_user.send_friend_request!(@friend)
+      @friend.notify(friendship, 'create')
       redirect_to @friend, notice: 'Friend request sent.'
     else
       redirect_to @friend, alert: 'Cannot send friend request to this user.'

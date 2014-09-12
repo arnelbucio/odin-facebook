@@ -1,0 +1,5 @@
+<%= content_tag :p do %>
+  <%= link_to notification.resource.friend.name, user_path(notification.resource.friend) %>
+  <%= 'sent a friend request.' %>
+  <%= friend_request_button(notification.resource.friend) %>
+<% end %>

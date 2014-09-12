@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts, dependent: :destroy
+  has_many :notifications, dependent: :destroy
   has_many :friendships, dependent: :destroy
   has_many :friends,           -> { where("status = 'accepted'") },
                                     through: :friendships
@@ -42,5 +43,9 @@ class User < ActiveRecord::Base
         friend.friendships.find_by(friend: self).destroy
       end
     end
+  end
+
+  def notify(resource, action)
+    self.notifications.create!(resource: resource, action: action)
   end
 end

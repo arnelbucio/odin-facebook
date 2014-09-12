@@ -1,0 +1,6 @@
+<h1>Notifications</h1>
+
+<% @notifications.each do |notification| %>
+  <%= render "notifications/#{notification.resource_type.underscore}/#{notification.action}",
+             notification: notification %>
+<% end %>
