@@ -1,0 +1,6 @@
+<%= content_tag :p do %>
+  <%= 'You are now friends with ' %>
+  <%= link_to "#{notification.resource.friend.name}.", user_path(notification.resource.friend) %>
+  <%= friend_request_button(notification.resource.friend) %>
+<% end %>
+

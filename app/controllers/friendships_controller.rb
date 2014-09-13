@@ -12,6 +12,8 @@ class FriendshipsController < ApplicationController
 
   def accept
     if current_user.accept_friend_request!(@friend)
+      friendship = @friend.friendships.find_by(friend: current_user)
+      @friend.notify(friendship, 'accept')
       redirect_to @friend, notice: 'Friend request accepted.'
     else
       redirect_to @friend, notice: 'Friend request not found.'
