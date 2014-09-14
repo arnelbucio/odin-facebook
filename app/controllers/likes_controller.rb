@@ -7,6 +7,12 @@ class LikesController < ApplicationController
     end
   end
 
+  def destroy
+    if current_user.unlike!(@likable)
+      redirect_to @likable, notice: "#{@likable.class} unliked."
+    end
+  end
+
   private
 
   def load_likable

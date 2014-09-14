@@ -50,6 +50,10 @@ class User < ActiveRecord::Base
     self.likes.create!(likable: likable)
   end
 
+  def unlike!(likable)
+    self.likes.find_by(likable: likable).destroy!
+  end
+
   def like?(likable)
     self.likes.exists?(likable: likable)
   end
