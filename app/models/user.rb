@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_many :friendships, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_many :friends,           -> { where("status = 'accepted'") },
                                     through: :friendships
   has_many :requested_friends, -> { where("status = 'requested'") },
@@ -43,6 +44,14 @@ class User < ActiveRecord::Base
         friend.friendships.find_by(friend: self).destroy
       end
     end
+  end
+
+  def like!(likable)
+    self.likes.create!(likable: likable)
+  end
+
+  def like?(likable)
+    self.likes.exists?(likable: likable)
   end
 
   def notify(resource, action)

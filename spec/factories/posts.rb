@@ -1,8 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :post do
-    user nil
-    content "MyText"
+    user
+    content 'Post content'
   end
 end
