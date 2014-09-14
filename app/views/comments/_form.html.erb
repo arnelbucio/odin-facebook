@@ -1,0 +1,4 @@
+<%= simple_form_for [commentable, Comment.new] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit 'Comment' %>
+<% end %>
