@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.where("user_id IN (?)", current_user.friend_and_self_ids)
   end
 
   def show

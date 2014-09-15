@@ -47,6 +47,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def friend_and_self_ids
+    friend_ids << self.id
+  end
+
   def like!(likable)
     self.likes.create!(likable: likable)
   end

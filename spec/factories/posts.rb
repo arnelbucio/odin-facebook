@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :post do
     user
-    content 'Post content'
+    sequence(:content) { |n| "Post content ##{n}" }
   end
 end
