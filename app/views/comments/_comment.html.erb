@@ -1,1 +1,5 @@
-<%= comment.user.name %>: <%= simple_format comment.content %>
+<%= div_for comment do %>
+  <%= comment.user.name %>: <%= simple_format comment.content %>
+  <%= like_link_for(comment) %>
+  <%= likes_count(comment) %>
+<% end %>

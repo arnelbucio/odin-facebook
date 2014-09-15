@@ -2,10 +2,13 @@ Rails.application.routes.draw do
   root 'posts#index'
   devise_for :users
 
-  resources :posts do
+  resources :posts, shallow: true do
     resource :like, only: [:create, :destroy]
-    resources :comments, only: :create
+    resources :comments, only: :create do
+      resource :like, only: [:create, :destroy]
+    end
   end
+
   resources :users
   resource :friendship do
     patch :accept

@@ -3,13 +3,13 @@ class LikesController < ApplicationController
 
   def create
     if current_user.like!(@likable)
-      redirect_to @likable, notice: "#{@likable.class} liked."
+      redirect_to root_path, notice: "#{@likable.class} liked."
     end
   end
 
   def destroy
     if current_user.unlike!(@likable)
-      redirect_to @likable, notice: "#{@likable.class} unliked."
+      redirect_to root_path, notice: "#{@likable.class} unliked."
     end
   end
 
