@@ -1,6 +1,9 @@
 <%= div_for post do %>
   <%= simple_format post.content %>
-  <%= like_link_for(post) %>
+  <%= content_tag :div, class: 'likes' do %>
+    <%= like_link_for(post) %>
+    <%= likes_count(post) %>
+  <% end %>
   <%= content_tag :div, class: 'comments' do %>
     <%= render post.comments %>
     <%= render 'comments/form', commentable: post %>

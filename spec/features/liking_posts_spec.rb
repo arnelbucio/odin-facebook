@@ -25,4 +25,19 @@ feature 'Liking posts' do
     expect(page).to have_content('Post unliked.')
     expect(page).to have_link('Like')
   end
+
+  scenario 'increments likes count' do
+    user = create :user
+    user2 = create :user
+    post = create :post, user: user
+
+    sign_in user
+    visit post_path post
+    click_link 'Like'
+    expect(page).to have_content('1 like')
+
+    user2.like! post
+    visit post_path post
+    expect(page).to have_content('2 likes')
+  end
 end

@@ -9,6 +9,11 @@ module LikesHelper
     end
   end
 
+  def likes_count(likable)
+    return if likable.likes.empty?
+    pluralize(likable.likes.size, 'like')
+  end
+
   private
 
   def like_link(likable)
