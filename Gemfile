@@ -19,6 +19,9 @@ gem 'simple_form', '~> 3.1.0.rc2' # tag for Bootstrap 3 support
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
 
+# File uploads
+gem 'carrierwave'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
