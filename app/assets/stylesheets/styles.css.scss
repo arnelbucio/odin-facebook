@@ -4,3 +4,14 @@
 textarea {
   max-width: 100%;
 }
+
+.post {
+  overflow-wrap: break-word;
+}
+
+.comment_form {
+  .avatar {
+    float: left;
+    margin-right: 10px;
+  }
+}

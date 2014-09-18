@@ -1,5 +1,11 @@
-<%= div_for comment do %>
-  <%= comment.user.name %>: <%= simple_format comment.content %>
-  <%= like_link_for(comment) %>
-  <%= likes_count(comment) %>
+<%= div_for comment, class: 'media' do %>
+  <%= link_to user_avatar(comment.user, :icon), comment.user, class: 'pull-left' %>
+  <div class='media-body'>
+    <%= link_to comment.user.name, comment.user, class: 'media-heading' %>
+    <span><%= comment.content %></span>
+    <div class='likes'>
+      <%= like_link_for(comment) %>
+      <%= likes_count(comment) %>
+    </div>
+  </div>
 <% end %>

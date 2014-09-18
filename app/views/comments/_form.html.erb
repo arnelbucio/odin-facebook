@@ -1,4 +1,12 @@
-<%= simple_form_for [commentable, Comment.new] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit 'Comment' %>
+<%= content_tag :div, class: 'comment_form media' do %>
+  <%= user_avatar(current_user, :icon) %>
+  <%= simple_form_for [commentable, Comment.new], html: { autocomplete: 'off' } do |f| %>
+    <div class="input-group">
+      <%= f.input :content, placeholder: 'Add a comment..', label: false,
+                            required: true, as: :string %>
+      <span class="input-group-btn">
+        <%= f.submit 'Comment', class: 'btn btn-default' %>
+      </span>
+    </div>
+  <% end %>
 <% end %>

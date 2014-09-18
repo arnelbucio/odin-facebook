@@ -4,14 +4,15 @@
     <div class='media-body'>
       <%= link_to post.user.name, post.user, class: 'media-heading' %>
       <%= simple_format post.content %>
+      <%= content_tag :div, class: 'likes' do %>
+        <%= like_link_for(post) %>
+        <%= likes_count(post) %>
+      <% end %>
     </div>
-    <%= content_tag :div, class: 'likes' do %>
-      <%= like_link_for(post) %>
-      <%= likes_count(post) %>
-    <% end %>
-    <%= content_tag :div, class: 'comments' do %>
+    <hr>
+    <div class='comments'>
       <%= render post.comments %>
       <%= render 'comments/form', commentable: post %>
-    <% end %>
+    </div>
   </div>
 <% end %>
