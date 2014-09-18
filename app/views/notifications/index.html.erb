@@ -2,5 +2,5 @@
 
 <% @notifications.each do |notification| %>
   <%= render "notifications/#{notification.resource_type.underscore}/#{notification.action}",
-             notification: notification %>
+             notification: notification || 'You have no notifications' %>
 <% end %>

@@ -22,6 +22,9 @@ gem 'bootstrap-sass', '~> 3.2.0'
 # File uploads
 gem 'carrierwave'
 
+# ImageMagick wrapper
+gem 'mini_magick'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

@@ -1,11 +1,17 @@
-<%= div_for post do %>
-  <%= simple_format post.content %>
-  <%= content_tag :div, class: 'likes' do %>
-    <%= like_link_for(post) %>
-    <%= likes_count(post) %>
-  <% end %>
-  <%= content_tag :div, class: 'comments' do %>
-    <%= render post.comments %>
-    <%= render 'comments/form', commentable: post %>
-  <% end %>
+<%= div_for post, class: 'panel panel-default clearfix' do %>
+  <div class="panel-body media">
+    <%= link_to user_avatar(post.user), post.user, class: 'pull-left' %>
+    <div class='media-body'>
+      <%= link_to post.user.name, post.user, class: 'media-heading' %>
+      <%= simple_format post.content %>
+    </div>
+    <%= content_tag :div, class: 'likes' do %>
+      <%= like_link_for(post) %>
+      <%= likes_count(post) %>
+    <% end %>
+    <%= content_tag :div, class: 'comments' do %>
+      <%= render post.comments %>
+      <%= render 'comments/form', commentable: post %>
+    <% end %>
+  </div>
 <% end %>

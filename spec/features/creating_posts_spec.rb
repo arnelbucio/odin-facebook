@@ -7,7 +7,7 @@ feature 'Creating Posts' do
     visit '/'
 
     fill_in 'post[content]', with: 'Hello, world!'
-    click_button 'Create Post'
+    click_button 'Post'
 
     expect(page).to have_content('Post created')
     expect(page).to have_content('Hello, world')

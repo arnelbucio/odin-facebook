@@ -1,4 +1,4 @@
 <%= simple_form_for Post.new do |f| %>
-  <%= f.input :content %>
-  <%= f.button :submit %>
+  <%= f.input :content, label: false, placeholder: 'Content goes here...' %>
+  <%= f.button :submit, 'Post', class: 'btn-primary' %>
 <% end %>
