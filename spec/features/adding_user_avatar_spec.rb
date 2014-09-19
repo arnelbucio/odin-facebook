@@ -12,5 +12,9 @@ feature 'Adding user avatar' do
     click_button 'Update'
 
     expect(page).to have_content('Your account has been updated successfully')
+
+    click_link 'Profile'
+    user.reload
+    expect(page.find('#profile .avatar')['src']).to have_content(user.avatar.small.url)
   end
 end

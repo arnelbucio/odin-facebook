@@ -1,3 +1,7 @@
-<h1><%= @user.name %></h1>
-<%= friend_request_button(@user) %>
+<div id='profile' class='clearfix'>
+  <%= user_avatar(@user, :small) %>
+  <h1><%= @user.name %></h1>
+  <%= friend_request_button(@user) %>
+</div>
+
 <%= render @user.posts %>
