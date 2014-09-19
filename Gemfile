@@ -29,6 +29,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'pry-rails'
+  gem 'rack-mini-profiler'
+  gem 'bullet'
 end
 
 group :development do

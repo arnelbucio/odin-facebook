@@ -41,6 +41,9 @@ GEM
     bootstrap-sass (3.2.0.1)
       sass (~> 3.2)
     builder (3.2.2)
+    bullet (4.10.0)
+      activesupport
+      uniform_notifier (~> 1.6.0)
     capybara (2.4.1)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -107,6 +110,8 @@ GEM
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
+    rack-mini-profiler (0.9.1)
+      rack (>= 1.1.3)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.5)
@@ -179,6 +184,7 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uniform_notifier (1.6.2)
     warden (1.2.3)
       rack (>= 1.0)
     xpath (2.0.0)
@@ -192,6 +198,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
+  bullet
   capybara
   carrierwave
   coffee-rails (~> 4.0.0)
@@ -203,6 +210,7 @@ DEPENDENCIES
   pg
   pry-rails
   quiet_assets
+  rack-mini-profiler
   rails (= 4.1.5)
   rspec-rails
   sass-rails (~> 4.0.3)

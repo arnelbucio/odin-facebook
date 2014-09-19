@@ -1,16 +1,16 @@
 module LikesHelper
   def like_link_for(likable)
-    content_tag_for(:span, likable, :like) do
-      if likable.likes.empty? || !current_user.like?(likable)
-        like_link(likable)
-      else
-        unlike_link(likable)
-      end
+    return like_link(likable) if likable.likes.size.zero?
+
+    unless current_user.like?(likable)
+      like_link(likable)
+    else
+      unlike_link(likable)
     end
   end
 
   def likes_count(likable)
-    return if likable.likes.empty?
+    return if likable.likes.size.zero?
     pluralize(likable.likes.size, 'like')
   end
 
