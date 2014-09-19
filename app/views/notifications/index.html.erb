@@ -1,6 +1,8 @@
 <h1>Notifications</h1>
 
+<%= 'You have no notifications' if @notifications.empty? %>
+
 <% @notifications.each do |notification| %>
   <%= render "notifications/#{notification.resource_type.underscore}/#{notification.action}",
-             notification: notification || 'You have no notifications' %>
+             notification: notification %>
 <% end %>

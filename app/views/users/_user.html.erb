@@ -1,0 +1,6 @@
+<%= div_for user, class: 'clearfix' do %>
+  <%= link_to user_avatar(user), user, class: 'pull-left' %>
+  <%= link_to user.name, user %>
+  <%= friend_request_button(user) %>
+<% end %>
+<hr>

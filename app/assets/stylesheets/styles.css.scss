@@ -9,7 +9,7 @@ textarea {
   overflow-wrap: break-word;
 }
 
-.comment_form {
+.comment_form, #profile, .user {
   .avatar {
     float: left;
     margin-right: 10px;
@@ -18,8 +18,4 @@ textarea {
 
 #profile {
   margin-bottom: 20px;
-  .avatar {
-    float: left;
-    margin-right: 10px;
-  }
 }
