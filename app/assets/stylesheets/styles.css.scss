@@ -1,15 +1,25 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+img {
+  max-width: 100%;
+}
+
 textarea {
   max-width: 100%;
 }
 
 .post {
   overflow-wrap: break-word;
+  .post_content, hr {
+    margin: 10px 0;
+  }
 }
 
-.comment_form, #profile, .user {
+.comment_form,
+#profile,
+.user,
+.post .media-heading {
   .avatar {
     float: left;
     margin-right: 10px;
