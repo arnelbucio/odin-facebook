@@ -3,7 +3,7 @@
     <%= link_to user_avatar(post.user), post.user, class: 'pull-left' %>
     <div class='media-body'>
       <%= link_to post.user.name, post.user, class: 'media-heading' %>
-      <%= simple_format post.content %>
+      <%= render post.content %>
       <%= content_tag :div, class: 'likes' do %>
         <%= like_link_for(post) %>
         <%= likes_count(post) %>

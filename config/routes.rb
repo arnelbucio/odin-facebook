@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resource :like, only: [:create, :destroy]
     end
   end
+  resources :text_posts, only: [:create]
 
   resources :users
   resource :friendship do

@@ -14,8 +14,8 @@ feature 'Viewing posts' do
     sign_in user
     visit '/'
 
-    expect(page).to have_content(user_post.content)
-    expect(page).to have_content(friend_post.content)
-    expect(page).to_not have_content(other_user_post.content)
+    expect(page).to have_content(user_post.content.content)
+    expect(page).to have_content(friend_post.content.content)
+    expect(page).to_not have_content(other_user_post.content.content)
   end
 end

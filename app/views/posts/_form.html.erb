@@ -1,4 +1,9 @@
-<%= simple_form_for Post.new do |f| %>
+<%= simple_form_for TextPost.new do |f| %>
   <%= f.input :content, label: false, placeholder: 'Content goes here...' %>
   <%= f.button :submit, 'Post', class: 'btn-primary' %>
 <% end %>
+
+<%#= simple_form_for PhotoPost.new do |f| %>
+  <%#= f.input :content, label: false, placeholder: 'Content goes here...' %>
+  <%#= f.button :submit, 'Post', class: 'btn-primary' %>
+<%# end %>

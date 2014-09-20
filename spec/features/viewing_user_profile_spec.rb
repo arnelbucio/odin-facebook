@@ -10,6 +10,6 @@ feature 'Viewing user profile' do
     click_link 'Profile'
 
     expect(page).to have_content(user.name)
-    expect(page).to have_content(post.content)
+    expect(page).to have_content(post.content.content)
   end
 end
