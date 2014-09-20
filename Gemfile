@@ -30,7 +30,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'rack-mini-profiler'
-  gem 'bullet'
 end
 
 group :development do
@@ -38,6 +37,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
+  gem 'bullet'
 end
 
 group :test do
