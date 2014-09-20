@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:user, comments: [:user]).
+    @posts = Post.includes(:user, :content, comments: [:user]).
                   where("user_id IN (?)", current_user.friend_and_self_ids)
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(comments: [:user]).find(params[:id])
   end
 
   def create

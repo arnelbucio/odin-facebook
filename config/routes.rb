@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
   end
   resources :text_posts, only: [:create]
+  resources :photo_posts, only: [:create]
 
   resources :users
   resource :friendship do

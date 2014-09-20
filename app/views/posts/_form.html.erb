@@ -1,9 +1,19 @@
-<%= simple_form_for TextPost.new do |f| %>
-  <%= f.input :content, label: false, placeholder: 'Content goes here...' %>
-  <%= f.button :submit, 'Post', class: 'btn-primary' %>
-<% end %>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#post_status" role="tab" data-toggle="tab">Update your status</a></li>
+  <li><a href="#post_photo" role="tab" data-toggle="tab">Post a photo</a></li>
+</ul>
 
-<%#= simple_form_for PhotoPost.new do |f| %>
-  <%#= f.input :content, label: false, placeholder: 'Content goes here...' %>
-  <%#= f.button :submit, 'Post', class: 'btn-primary' %>
-<%# end %>
+<div class="tab-content">
+  <div class="tab-pane active" id="post_status">
+    <%= simple_form_for TextPost.new do |f| %>
+      <%= f.input :content, label: false, placeholder: 'Content goes here...' %>
+      <%= f.button :submit, 'Post', class: 'btn-primary' %>
+    <% end %>
+  </div>
+  <div class="tab-pane" id="post_photo">
+    <%= simple_form_for PhotoPost.new do |f| %>
+      <%= f.input :photo, label: false, required: true %>
+      <%= f.button :submit, 'Post', class: 'btn-primary' %>
+    <% end %>
+  </div>
+</div>
