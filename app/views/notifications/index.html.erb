@@ -6,3 +6,4 @@
   <%= render "notifications/#{notification.resource_type.underscore}/#{notification.action}",
              notification: notification %>
 <% end %>
+<%= paginate @notifications %>
