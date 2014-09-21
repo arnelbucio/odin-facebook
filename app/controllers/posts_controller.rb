@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.includes(:user, :content, comments: [:user]).
-                  where("user_id IN (?)", current_user.friend_and_self_ids)
+                  where("user_id IN (?)", current_user.friend_and_self_ids).
+                  page(params[:page])
   end
 
   def show
