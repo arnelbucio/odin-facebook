@@ -25,6 +25,9 @@ gem 'carrierwave'
 # ImageMagick wrapper
 gem 'mini_magick'
 
+# Pagination
+gem 'kaminari'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
