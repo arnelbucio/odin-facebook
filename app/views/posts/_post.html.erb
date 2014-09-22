@@ -1,22 +1,24 @@
-<%= div_for post, class: 'panel panel-default clearfix' do %>
-  <div class="panel-body media">
-    <div class='media-body'>
-      <div class='media-heading clearfix'>
-        <%= link_to user_avatar(post.user), post.user, class: 'pull-left' %>
-        <%= link_to post.user.name, post.user %>
+<% cache [post, current_user] do %>
+  <%= div_for post, class: 'panel panel-default clearfix' do %>
+    <div class='panel-body media'>
+      <div class='media-body'>
+        <div class='media-heading clearfix'>
+          <%= link_to user_avatar(post.user), post.user, class: 'pull-left' %>
+          <%= link_to post.user.name, post.user %>
+        </div>
+      </div>
+      <div class='post_content'>
+        <%= render post.content %>
+      </div>
+      <div class='likes'>
+        <%= like_link_for(post) %>
+        <%= likes_count(post) %>
+      </div>
+      <hr>
+      <div class='comments'>
+        <%= render post.comments %>
+        <%= render 'comments/form', commentable: post %>
       </div>
     </div>
-    <div class='post_content'>
-      <%= render post.content %>
-    </div>
-    <%= content_tag :div, class: 'likes' do %>
-      <%= like_link_for(post) %>
-      <%= likes_count(post) %>
-    <% end %>
-    <hr>
-    <div class='comments'>
-      <%= render post.comments %>
-      <%= render 'comments/form', commentable: post %>
-    </div>
-  </div>
+  <% end %>
 <% end %>
