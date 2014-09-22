@@ -4,7 +4,7 @@
   <%= friend_request_button(@user) %>
 </div>
 
-<%= render @user_posts %>
+<%= render(@user_posts) || 'No posts yet.' %>
 
 <div class='text-center'>
   <%= paginate @user_posts %>
