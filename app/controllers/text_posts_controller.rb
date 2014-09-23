@@ -4,7 +4,7 @@ class TextPostsController < ApplicationController
     if post.save
       redirect_to post, notice: 'Post created.'
     else
-      redirect_to root_path, notice: 'Cannot create post.'
+      redirect_to root_path, alert: 'Content cannot be blank.'
     end
   end
 

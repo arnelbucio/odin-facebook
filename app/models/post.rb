@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   has_many :comments, as: :commentable, dependent: :destroy
 
   validates :user, presence: true
-  validates :content, presence: true
+  validates :content, presence: true, associated: true
 
   default_scope { order(id: :desc) }
 
