@@ -28,6 +28,9 @@ gem 'mini_magick'
 # Pagination
 gem 'kaminari'
 
+# jQuery Timeago helper
+gem 'rails-timeago'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
