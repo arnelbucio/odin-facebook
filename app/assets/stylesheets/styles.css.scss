@@ -11,6 +11,10 @@ textarea {
 
 .post {
   overflow-wrap: break-word;
+  .media-heading time {
+    display: block;
+    font-size: 85%;
+  }
   .post_content, hr {
     margin: 10px 0;
   }

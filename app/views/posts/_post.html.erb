@@ -5,6 +5,7 @@
         <div class='media-heading clearfix'>
           <%= link_to user_avatar(post.user), post.user, class: 'pull-left' %>
           <%= link_to post.user.name, post.user %>
+          <%= link_to timeago_tag(post.created_at), post %>
         </div>
       </div>
       <div class='post_content'>
