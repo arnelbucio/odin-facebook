@@ -4,7 +4,8 @@
     <div class='media-body'>
       <%= link_to comment.user.name, comment.user, class: 'media-heading' %>
       <span><%= comment.content %></span>
-      <div class='likes'>
+      <div class='actions'>
+        <%= timeago_tag(comment.created_at) %>
         <%= like_link_for(comment) %>
         <%= likes_count(comment) %>
       </div>
