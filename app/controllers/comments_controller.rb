@@ -5,7 +5,10 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     @comment.commentable = @commentable
     if @comment.save
-      redirect_to @commentable, notice: 'Comment created.'
+      respond_to do |format|
+        format.html { redirect_to @commentable, notice: 'Comment created.' }
+        format.js
+      end
     end
   end
 

@@ -1,0 +1,6 @@
+var commentable = $('#<%= dom_id(@commentable) %>');
+
+commentable.find('.comments').append('<%= j render(@comment) %>').
+            find('time[data-time-ago]').timeago();
+
+commentable.find('#comment_content').val('');
