@@ -6,8 +6,12 @@
       <span><%= comment.content %></span>
       <div class='actions'>
         <%= timeago_tag(comment.created_at) %>
-        <%= like_link_for(comment) %>
-        <%= likes_count(comment) %>
+        <%= content_tag_for(:span, comment, :like) do %>
+          <%= like_link_for(comment) %>
+        <% end %>
+        <%= content_tag_for(:span, comment, :likes_count) do %>
+          <%= likes_count(comment) %>
+        <% end %>
       </div>
     </div>
   <% end %>
