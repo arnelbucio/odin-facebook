@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap/alert
 //= require bootstrap/tab
+//= require jquery.remotipart
 //= require rails-timeago
 //= require turbolinks
 //= require_tree .

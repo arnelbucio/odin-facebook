@@ -1,8 +1,11 @@
 class PhotoPostsController < ApplicationController
   def create
-    post = build_post
-    if post.save
-      redirect_to post, notice: 'Post created.'
+    @post = build_post
+    if @post.save
+      respond_to do |format|
+        format.html { redirect_to @post, notice: 'Post created.' }
+        format.js
+      end
     else
       redirect_to root_path, notice: 'Cannot create post.'
     end

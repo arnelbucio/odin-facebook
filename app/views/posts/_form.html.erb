@@ -11,7 +11,7 @@
     <% end %>
   </div>
   <div class="tab-pane" id="post_photo">
-    <%= simple_form_for PhotoPost.new do |f| %>
+    <%= simple_form_for PhotoPost.new, remote: true do |f| %>
       <%= f.input :photo, label: false, required: true %>
       <%= f.button :submit, 'Post', class: 'btn-primary' %>
     <% end %>
