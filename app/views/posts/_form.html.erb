@@ -7,13 +7,13 @@
   <div class="tab-pane active" id="post_status">
     <%= simple_form_for TextPost.new, remote: true do |f| %>
       <%= f.input :content, label: false, placeholder: 'Content goes here...' %>
-      <%= f.button :submit, 'Post', class: 'btn-primary' %>
+      <%= f.button :submit, 'Post', class: 'btn-primary', data: { disable_with: 'Post' } %>
     <% end %>
   </div>
   <div class="tab-pane" id="post_photo">
     <%= simple_form_for PhotoPost.new, remote: true do |f| %>
       <%= f.input :photo, label: false, required: true %>
-      <%= f.button :submit, 'Post', class: 'btn-primary' %>
+      <%= f.button :submit, 'Post', class: 'btn-primary', data: { disable_with: 'Post' } %>
     <% end %>
   </div>
 </div>
