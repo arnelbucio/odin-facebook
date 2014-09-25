@@ -48,7 +48,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'poltergeist'
   gem 'launchy'
   gem 'shoulda-matchers', require: false
 end
