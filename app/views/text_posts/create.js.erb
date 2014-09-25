@@ -1,0 +1,3 @@
+$('<%= j render(@post) %>').prependTo('#posts').hide().fadeIn(1000)
+$('#text_post_content').val('')
+$('.post time[data-time-ago]').timeago()

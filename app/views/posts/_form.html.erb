@@ -5,7 +5,7 @@
 
 <div class="tab-content">
   <div class="tab-pane active" id="post_status">
-    <%= simple_form_for TextPost.new do |f| %>
+    <%= simple_form_for TextPost.new, remote: true do |f| %>
       <%= f.input :content, label: false, placeholder: 'Content goes here...' %>
       <%= f.button :submit, 'Post', class: 'btn-primary' %>
     <% end %>
