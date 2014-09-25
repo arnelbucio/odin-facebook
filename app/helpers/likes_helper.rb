@@ -17,10 +17,12 @@ module LikesHelper
   private
 
   def like_link(likable)
-    link_to 'Like', [likable, :like], method: :post
+    link_to 'Like', [likable, :like], method: :post,
+                    remote: true, data: { disable_with: 'Like' }
   end
 
   def unlike_link(likable)
-    link_to 'Unlike', [likable, :like], method: :delete
+    link_to 'Unlike', [likable, :like], method: :delete,
+                      remote: true, data: { disable_with: 'Unlike' }
   end
 end

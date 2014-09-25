@@ -12,8 +12,12 @@
         <%= render post.content %>
       </div>
       <div class='likes'>
-        <%= like_link_for(post) %>
-        <%= likes_count(post) %>
+        <%= content_tag_for(:span, post, :like) do %>
+          <%= like_link_for(post) %>
+        <% end %>
+        <%= content_tag_for(:span, post, :likes_count) do %>
+          <%= likes_count(post) %>
+        <% end %>
       </div>
       <hr>
       <div class='comments'>

@@ -3,7 +3,10 @@ class LikesController < ApplicationController
 
   def create
     if current_user.like!(@likable)
-      redirect_to root_path, notice: "#{@likable.class} liked."
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: "#{@likable.class} liked." }
+        format.js
+      end
     end
   end
 

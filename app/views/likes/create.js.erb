@@ -1,0 +1,4 @@
+var likable = $('#<%= dom_id(@likable.reload) %>')
+
+likable.find('#like_<%= dom_id(@likable) %>').html("<%= j unlike_link(@likable) %>")
+likable.find('#likes_count_<%= dom_id(@likable) %>').replaceWith("<%= j likes_count(@likable) %>")
