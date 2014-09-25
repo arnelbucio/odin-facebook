@@ -17,9 +17,3 @@
 //= require rails-timeago
 //= require turbolinks
 //= require_tree .
-
-window.setTimeout(function() {
-  $('.alert').fadeTo(500, 0).slideUp(500, function(){
-      $(this).remove();
-  });
-}, 5000);
