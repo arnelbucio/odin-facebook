@@ -14,8 +14,6 @@ module LikesHelper
     pluralize(likable.likes.size, 'like')
   end
 
-  private
-
   def like_link(likable)
     link_to 'Like', [likable, :like], method: :post,
                     remote: true, data: { disable_with: 'Like' }

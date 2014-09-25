@@ -12,7 +12,10 @@ class LikesController < ApplicationController
 
   def destroy
     if current_user.unlike!(@likable)
-      redirect_to root_path, notice: "#{@likable.class} unliked."
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: "#{@likable.class} unliked." }
+        format.js
+      end
     end
   end
 

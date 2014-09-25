@@ -7,8 +7,6 @@ module FriendshipsHelper
     return send_friend_request_button(friend)
   end
 
-  private
-
   def send_friend_request_button(friend)
     button_to 'Send friend request', friendship_path(friend_id: friend.id),
                                      data: { confirm: 'Are you sure?' }
