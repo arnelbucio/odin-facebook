@@ -31,6 +31,9 @@ gem 'kaminari'
 # jQuery Timeago helper
 gem 'rails-timeago'
 
+# AJAX file uploads
+gem 'remotipart', '~> 1.2.1'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
