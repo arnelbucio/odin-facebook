@@ -34,6 +34,10 @@ gem 'rails-timeago'
 # AJAX file uploads
 gem 'remotipart', '~> 1.2.1'
 
+# App config
+gem 'figaro', '~> 1.0'
+
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
