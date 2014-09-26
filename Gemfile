@@ -12,6 +12,9 @@ gem 'turbolinks'
 # Authentication
 gem 'devise'
 
+# Github OmniAuth
+gem 'omniauth-github'
+
 # Form builder
 gem 'simple_form', '~> 3.1.0.rc2' # tag for Bootstrap 3 support
 
