@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'posts#index'
-  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks',
+                                    registrations: 'registrations' }
 
   resources :posts, shallow: true do
     resource :like, only: [:create, :destroy]
