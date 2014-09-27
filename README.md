@@ -7,5 +7,5 @@ Implementation of [The Odin Project: Ruby on Rails Final Project](http://www.the
 **Live Demo:** http://theodinbook.herokuapp.com
 
 ### TODO
-- Add remove link to posts and comments
+- Add controller specs
 - Update README

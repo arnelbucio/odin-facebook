@@ -9,6 +9,15 @@ class PostsController < ApplicationController
     @post = Post.includes(comments: [:user]).find(params[:id])
   end
 
+  def destroy
+    @post = current_user.posts.find(params[:id])
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Post removed.' }
+      format.js
+    end
+  end
+
   private
 
   def post_params

@@ -1,6 +1,7 @@
 <% cache [post, current_user] do %>
   <%= div_for post, class: 'panel panel-default clearfix' do %>
     <div class='panel-body media'>
+      <%= remove_link(post) %>
       <div class='media-body'>
         <div class='media-heading clearfix'>
           <%= link_to user_avatar(post.user), post.user, class: 'pull-left' %>
