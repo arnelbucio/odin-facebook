@@ -1,5 +1,6 @@
 <% cache [comment, current_user] do %>
   <%= div_for comment, class: 'media' do %>
+    <%= remove_link(comment) %>
     <%= link_to user_avatar(comment.user, :icon), comment.user, class: 'pull-left' %>
     <div class='media-body'>
       <%= link_to comment.user.name, comment.user, class: 'media-heading' %>

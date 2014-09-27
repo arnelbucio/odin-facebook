@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :posts, shallow: true do
     resource :like, only: [:create, :destroy]
-    resources :comments, only: :create do
+    resources :comments, only: [:create, :destroy] do
       resource :like, only: [:create, :destroy]
     end
   end
