@@ -8,4 +8,9 @@ class UsersController < ApplicationController
     @user_posts = @user.posts.includes(:content, comments: [:user]).
                               page(params[:page]).per(12)
   end
+
+  def friends
+    @user = User.find(params[:user_id])
+    @friends = @user.friends.page(params[:page]).per(12)
+  end
 end

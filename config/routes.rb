@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   resources :text_posts, only: [:create]
   resources :photo_posts, only: [:create]
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    get 'friends'
+  end
   resource :friendship, only: [:create, :destroy] do
     patch :accept
   end

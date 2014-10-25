@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
   <li><%= link_to 'Users', users_path %></li>
+  <li><%= link_to 'Friends', user_friends_path(current_user) %></li>
   <li><%= link_to "Notifications #{notifications_badge}".html_safe, notifications_path %></li>
   <li><%= link_to 'Profile', current_user %></li>
   <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
