@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.5'
+ruby '3.1.2'
+
+gem 'rails', '4.1.16'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -8,6 +10,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
 gem 'turbolinks'
+
+gem 'bigdecimal', '1.4.4'
 
 # Authentication
 gem 'devise'
@@ -20,7 +24,7 @@ gem 'simple_form', '~> 3.1.0.rc2' # tag for Bootstrap 3 support
 
 # Bootstrap
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.2.0.4'
 
 # File uploads
 gem 'carrierwave'
